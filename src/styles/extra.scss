@@ -1,0 +1,66 @@
+// Mixins
+
+@mixin dispFlex($justify, $align) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flexin($align, $justify) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin aDeco($weight, $colores) {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: $weight;
+  color: $colores;
+
+  &:hover {
+    color: #98cdb6;
+  }
+}
+
+@mixin imgWrapper($ofit, $height, $width) {
+  object-fit: $ofit;
+  height: $height;
+  width: $width;
+}
+
+@mixin textWrapper($tColor) {
+  color: $tColor;
+  width: 60vw;
+  padding: 5em;
+
+  @media (max-width: 1000px) {
+    width: 100vw;
+    padding: 3em;
+  }
+
+  @media (max-width: 500px) {
+    padding: 2em 1.5em;
+  }
+}
+
+// Groups
+
+%articlesDeco {
+  background: #c4c4c41d;
+  border-radius: 5px;
+  padding: 2em;
+}
+
+%boxDeco {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+  padding: 2em;
+}
+
+%row5050 {
+  display: grid;
+  grid-template: 1fr / auto 1fr;
+}

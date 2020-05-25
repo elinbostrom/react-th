@@ -1,0 +1,36 @@
+.aboutUs {
+  background: #b6bfb3de;
+  width: 100vw;
+  margin-bottom: -10px;
+
+  &__text {
+    @include textWrapper(black);
+
+    h2 {
+      font-size: 25px;
+      padding-bottom: 1em;
+
+      @media (max-width: 400px) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      padding: 0.5em 0;
+
+      @media (max-width: 400px) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__photo {
+    img {
+      @include imgWrapper(cover, 500px, 100vw);
+
+      @media (max-width: 600px) {
+        @include imgWrapper(cover, 300px, 100vw);
+      }
+    }
+  }
+}

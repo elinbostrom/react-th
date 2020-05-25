@@ -1,0 +1,153 @@
+.contact {
+  color: black;
+  width: 70vw;
+  padding: 5em;
+
+  @media (max-width: 1000px) {
+    width: 100vw;
+    padding: 1.5em 1em;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 40px;
+
+    @media (max-width: 500px) {
+      font-size: 24px;
+    }
+  }
+
+  .felanmalan {
+    padding-bottom: 2em;
+    text-align: center;
+
+    @media (max-width: 500px) {
+      font-size: 12px;
+    }
+  }
+
+  h3 {
+    font-size: 12px;
+    padding-left: 0.5em;
+  }
+
+  img {
+    @include imgWrapper(cover, 150px, 100px);
+  }
+
+  &__staff {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 2em;
+
+    @media (max-width: 600px) {
+      grid-template: repeat(3, auto) / 1fr;
+      gap: 1em;
+    }
+  }
+
+  a {
+    @include aDeco(500, black);
+
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.oandr {
+  grid-column: span 2;
+
+  @media (max-width: 600px) {
+    grid-column: unset;
+  }
+
+  &__wrapper {
+    @extend %row5050;
+    @extend %boxDeco;
+
+    @media (max-width: 600px) {
+      grid-template: auto auto / 1fr;
+      gap: 1em;
+      padding: 1.5em;
+    }
+
+    h3 {
+      padding-left: unset;
+    }
+  }
+
+  &__wrapper__gunnar {
+    @extend %row5050;
+
+    @media (max-width: 600px) {
+      // grid-template: 1fr / auto auto;
+    }
+  }
+
+  &__wrapper__gunnar__text {
+    padding: 1em;
+    font-size: 14px;
+    @include flexin(flex-start, flex-end);
+  }
+
+  &__wrapper__johan {
+    @extend %row5050;
+    justify-self: flex-end;
+
+    @media (max-width: 600px) {
+      justify-self: unset;
+      // grid-template: 1fr / auto auto;
+    }
+  }
+
+  &__wrapper__johan__text {
+    padding: 1em;
+    font-size: 14px;
+    @include flexin(flex-start, flex-end);
+  }
+}
+
+.asandr {
+  &__wrapper__tommy {
+    @extend %row5050;
+    @extend %boxDeco;
+
+    @media (max-width: 600px) {
+      // grid-template: 1fr / auto auto;
+      padding: 1.5em;
+    }
+  }
+
+  &__wrapper__tommy__text {
+    h3 {
+      padding-left: unset;
+    }
+
+    padding: 1em;
+    font-size: 14px;
+    @include flexin(flex-start, flex-end);
+  }
+}
+
+.aoandr {
+  &__wrapper__leif {
+    @extend %row5050;
+    @extend %boxDeco;
+
+    @media (max-width: 600px) {
+      // grid-template: 1fr / auto auto;
+      padding: 1.5em;
+    }
+  }
+
+  &__wrapper__leif__text {
+    h3 {
+      padding-left: unset;
+    }
+
+    padding: 1em;
+    font-size: 14px;
+    @include flexin(flex-start, flex-end);
+  }
+}
