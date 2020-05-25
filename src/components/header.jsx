@@ -14,7 +14,7 @@ class Header extends React.Component {
           <a href="index.html" className="logo">
             <img src={logo} alt="trygga hiss logotype" />
           </a>
-          <ul>
+          <ul className="menu__desktop">
             <li>
               <a href="#aboutUs">Om oss</a>
             </li>
@@ -31,6 +31,17 @@ class Header extends React.Component {
               style={{ fontSize: "30px", color: "white" }}
             />
           </button>
+          <ul className="menu__mobile">
+            <li>
+              <a href="#aboutUs">Om oss</a>
+            </li>
+            <li>
+              <a href="#services">Tjänster</a>
+            </li>
+            <li>
+              <a href="#contact">Kontakt</a>
+            </li>
+          </ul>
         </nav>
         <section className="header__content">
           <h1>Välkommen till Trygga Hiss</h1>
