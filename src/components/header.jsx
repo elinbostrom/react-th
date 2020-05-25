@@ -1,48 +1,29 @@
 import React from "react";
 import logo from "../images/logo.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+import Navbar from "./nav/navbar";
+
+const Nav = styled.nav`
+  position: fixed;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.794) 0%,
+    rgba(37, 37, 37, 0.76) 70%,
+    rgba(37, 37, 37, 0.753) 100%
+  );
+  display: flex;
+  justify-conent: flex-end;
+  align-items: center;
+  padding: 1em 2em;
+  width: 100vw;
+`;
 
 class Header extends React.Component {
-  componentDidMount() {
-    console.log(logo);
-  }
   render() {
     return (
       <header>
-        <nav className="menu">
-          <a href="index.html" className="logo">
-            <img src={logo} alt="trygga hiss logotype" />
-          </a>
-          <ul className="menu__desktop">
-            <li>
-              <a href="#aboutUs">Om oss</a>
-            </li>
-            <li>
-              <a href="#services">Tjänster</a>
-            </li>
-            <li>
-              <a href="#contact">Kontakt</a>
-            </li>
-          </ul>
-          <button className="burger">
-            <FontAwesomeIcon
-              icon={faBars}
-              style={{ fontSize: "30px", color: "white" }}
-            />
-          </button>
-          <ul className="menu__mobile">
-            <li>
-              <a href="#aboutUs">Om oss</a>
-            </li>
-            <li>
-              <a href="#services">Tjänster</a>
-            </li>
-            <li>
-              <a href="#contact">Kontakt</a>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
         <section className="header__content">
           <h1>Välkommen till Trygga Hiss</h1>
         </section>

@@ -13,18 +13,6 @@ header {
 }
 
 nav {
-  position: fixed;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.794) 0%,
-    rgba(37, 37, 37, 0.76) 70%,
-    rgba(37, 37, 37, 0.753) 100%
-  );
-  @include dispFlex(flex-end, center);
-  padding: 1em 2em;
-  width: 100vw;
-
   .logo {
     margin-right: auto;
 
@@ -35,29 +23,17 @@ nav {
 
   .menu__desktop {
     display: flex;
-
-    @media (max-width: 800px) {
-      display: none;
-    }
   }
 
   .menu__mobile {
     text-align: right;
     padding: 0;
     grid-column: span 2;
-
-    @media (max-width: 800px) {
-      display: none;
-    }
+    display: none;
 
     li {
       margin: 1em;
     }
-  }
-
-  li {
-    list-style: none;
-    margin: 0 1em;
   }
 
   a {
@@ -88,22 +64,4 @@ nav {
 
 .hidden {
   display: none;
-}
-
-.burger {
-  display: none;
-
-  @media (max-width: 800px) {
-    display: block;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: ease 250ms;
-    transform: scale(1.1);
-  }
-}
-
-.burger_menu {
-  display: grid;
-  grid-template: auto auto / 1fr auto;
 }
