@@ -95,3 +95,36 @@
     border: 0.5px solid rgb(211, 211, 211);
   }
 }
+
+.error__msg {
+  text-align: unset;
+  font-weight: 700;
+  color: red;
+  font-size: 12px;
+  justify-self: left;
+}
+
+.note {
+  &__thankyou {
+    font-weight: 400;
+    grid-row: 3;
+    font-size: 14px;
+    padding-top: 0.5em;
+
+    @media (max-width: 600px) {
+      grid-row: unset;
+    }
+  }
+
+  &__error {
+    font-weight: 400;
+    color: red;
+    grid-row: 3;
+    font-size: 14px;
+    padding-top: 0.5em;
+
+    @media (max-width: 600px) {
+      grid-row: unset;
+    }
+  }
+}

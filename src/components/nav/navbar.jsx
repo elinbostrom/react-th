@@ -19,6 +19,7 @@ const Nav = styled.nav`
   align-items: center;
   padding: 1em 2em;
   width: 100vw;
+  transition: top 0.3s;
 `;
 
 class Navbar extends React.Component {

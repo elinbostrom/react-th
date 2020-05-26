@@ -1,97 +1,163 @@
 import React from "react";
-import axios from "axios";
+
+const defaultState = {
+  sendStatus: "",
+  name: "",
+  email: "",
+  message: "",
+  nameErr: "",
+  emailErr: "",
+  messageErr: "",
+};
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      values: {
-        name: "",
-        email: "",
-        message: "",
-      },
-      isSubmitting: false,
-      isError: false,
-    };
+    this.state = defaultState;
   }
 
-  submitForm = async (e) => {
-    e.preventDefault();
-    console.log(this.state);
-    this.setState({ isSubmitting: true });
-    try {
-      const { data } = await axios.post("https://formspree.io/mdoodqpy", {
-        ...this.state.values,
-      });
-    } catch (err) {
-      console.log(err);
+  checkInput(e) {
+    // console.log(e.target);
+
+    // Declear input types
+    let name = e.target.name === "name";
+    let email = e.target.name === "email";
+    let message = e.target.name === "message";
+
+    // setState input fields
+    if (name) {
+      this.setState({ name: e.target.value });
+      // console.log("Name value: " + e.target.value);
+      // console.log("Name value length: " + e.target.value.length);
     }
 
-    setTimeout(
-      () =>
-        this.setState({
-          isError: false,
-          message: "",
-          values: { email: "", name: "", message: "" },
-        }),
-      1600
-    );
+    if (email) {
+      this.setState({ email: e.target.value });
+      // console.log("Email value: " + e.target.value);
+      // console.log("Email value length: " + e.target.value.length);
+    }
+
+    if (message) {
+      this.setState({ message: e.target.value });
+      // console.log("Message value: " + e.target.value);
+      // console.log("Message value length: " + e.target.value.length);
+    }
+  }
+
+  validate = () => {
+    let nameErr = "";
+    let emailErr = "";
+    let messageErr = "";
+
+    // Valid letters
+    const validLetters = /^[a-zA-ZäöåÄÖÅ\s-é]+$/;
+
+    if (
+      !this.state.name ||
+      (this.state.name.length < 2 && this.state.name.length < 50) ||
+      !this.state.name.match(validLetters)
+    ) {
+      nameErr = "Namnet måste vara mellan 2-50 bokstäver";
+    }
+
+    if (!this.state.email.includes("@")) {
+      emailErr = "Felaktig e-postadress";
+    }
+
+    if (!this.state.message) {
+      messageErr = "Du måste skriva ett meddelande";
+    }
+
+    if (emailErr || nameErr || messageErr) {
+      this.setState({ emailErr, nameErr, messageErr });
+      return false;
+    }
+
+    return true;
   };
 
-  handleInputChange = (e) =>
-    this.setState({
-      values: { ...this.state.values, [e.target.name]: e.target.value },
-    });
+  noteMessage = () => {
+    return '<strong className="note__thankyou">Tack för ditt meddelande</strong>';
+  };
+
+  sendMessage(e) {
+    e.preventDefault();
+    const isValidated = this.validate();
+
+    if (isValidated) {
+      console.log(this.state);
+
+      const formEl = e.target;
+      const xhr = new XMLHttpRequest();
+      const formInfo = new FormData(formEl);
+
+      xhr.open(formEl.method, formEl.action);
+      xhr.setRequestHeader("Accept", "application/json");
+
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          this.setState(defaultState);
+          console.log(this.state);
+
+          this.setState({ sendStatus: "send" });
+        } else {
+          this.setState({ sendStatus: "error" });
+        }
+      };
+
+      xhr.send(formInfo);
+    }
+  }
 
   render() {
+    const { sendStatus } = this.state;
     return (
-      <div>
-        <form onSubmit={this.submitForm}>
-          <label htmlFor="name">
-            Namn
-            <input
-              type="name"
-              name="name"
-              id="name"
-              value={this.state.values.name}
-              onChange={this.handleInputChange}
-              title="Name"
-              required
-            />
-          </label>
-          <label htmlFor="email">
-            E-post
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={this.state.values.email}
-              onChange={this.handleInputChange}
-              title="Email"
-              required
-            />
-          </label>
-          <label htmlFor="message">
-            Meddelande
-            <textarea
-              name="message"
-              rows="10"
-              cols="30"
-              id="message"
-              value={this.state.values.message}
-              onChange={this.handleInputChange}
-              title="password"
-              required
-            >
-              {this.state.values.message}
-            </textarea>
-          </label>
-          <button type="submit">Skicka meddelande</button>
-        </form>
-        <div className={`message ${this.state.isError && "error"}`}>
-          {this.state.isSubmitting ? "Submitting..." : this.state.message}
-        </div>
-      </div>
+      <form
+        action="https://formspree.io/mdoodqpy"
+        method="POST"
+        onSubmit={this.sendMessage.bind(this)}
+      >
+        <label htmlFor="name">
+          Namn
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.checkInput.bind(this)}
+          />
+          <strong className="error__msg">{this.state.nameErr}</strong>
+        </label>
+        <label htmlFor="email">
+          E-post
+          <input
+            type="text"
+            name="email"
+            value={this.state.email}
+            onChange={this.checkInput.bind(this)}
+          />
+          <strong className="error__msg">{this.state.emailErr}</strong>
+        </label>
+        <label htmlFor="name">
+          Meddelande
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            value={this.state.message}
+            onChange={this.checkInput.bind(this)}
+          ></textarea>
+          <strong className="error__msg">{this.state.messageErr}</strong>
+        </label>
+        <button>Skicka meddelande</button>
+        {sendStatus === "send" && (
+          <strong className="note__thankyou">Tack för ditt meddelande</strong>
+        )}
+        {sendStatus === "error" && (
+          <strong className="note__error">Oj, nu blev det fel!</strong>
+        )}
+      </form>
     );
   }
 }

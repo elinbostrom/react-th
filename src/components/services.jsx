@@ -13,7 +13,7 @@ class Services extends React.Component {
       <section className="services" id="services">
         <h2>Tjänster</h2>
         <div className="services__articles">
-          <articles className="underhall">
+          <article className="underhall">
             <FontAwesomeIcon
               icon={faCogs}
               color="#F08585"
@@ -26,8 +26,8 @@ class Services extends React.Component {
               minskar. Vi anpassar våra serivceavtal enligt kundens önskemål.
               Tillgång till jourtjänst finns dygnet runt.
             </p>
-          </articles>
-          <articles className="reparation">
+          </article>
+          <article className="reparation">
             <FontAwesomeIcon
               icon={faTools}
               color="rgb(255, 204, 0)"
@@ -40,8 +40,8 @@ class Services extends React.Component {
               anmärkningar. Vi tillhandahåller reservdelar till alla på marknade
               förekommande hissfabrikat.
             </p>
-          </articles>
-          <articles className="emergency">
+          </article>
+          <article className="emergency">
             <FontAwesomeIcon
               icon={faPhoneVolume}
               color="#9FE99D"
@@ -52,8 +52,8 @@ class Services extends React.Component {
               Vi erbjuder installation och service av nödtelefoner samt sköter
               larmmottagningen till egen larmcentral, dygnet runt.
             </p>
-          </articles>
-          <articles className="modern">
+          </article>
+          <article className="modern">
             <FontAwesomeIcon
               icon={faSync}
               color="#9BC4E2"
@@ -72,7 +72,7 @@ class Services extends React.Component {
               och budgetunderlag för hissanläggningar, allt enligt kundens behov
               och önskemål.
             </p>
-          </articles>
+          </article>
         </div>
       </section>
     );
