@@ -64,3 +64,23 @@
   display: grid;
   grid-template: 1fr / auto 1fr;
 }
+
+// animations
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

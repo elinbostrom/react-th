@@ -1,6 +1,7 @@
 {
   "name": "tryggahiss1.1",
   "version": "0.1.0",
+  "homepage": "http://elinbostrom.se/tryggahiss/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.0.2"
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "terser": "^3.14.1"
   }
 }

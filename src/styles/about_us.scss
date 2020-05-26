@@ -5,6 +5,7 @@
 
   &__text {
     @include textWrapper(black);
+    padding: 7em 5em;
 
     h2 {
       font-size: 25px;

@@ -16,9 +16,7 @@ class ContactForm extends React.Component {
     this.state = defaultState;
   }
 
-  checkInput(e) {
-    // console.log(e.target);
-
+  setInputs(e) {
     // Declear input types
     let name = e.target.name === "name";
     let email = e.target.name === "email";
@@ -27,20 +25,14 @@ class ContactForm extends React.Component {
     // setState input fields
     if (name) {
       this.setState({ name: e.target.value });
-      // console.log("Name value: " + e.target.value);
-      // console.log("Name value length: " + e.target.value.length);
     }
 
     if (email) {
       this.setState({ email: e.target.value });
-      // console.log("Email value: " + e.target.value);
-      // console.log("Email value length: " + e.target.value.length);
     }
 
     if (message) {
       this.setState({ message: e.target.value });
-      // console.log("Message value: " + e.target.value);
-      // console.log("Message value length: " + e.target.value.length);
     }
   }
 
@@ -85,8 +77,6 @@ class ContactForm extends React.Component {
     const isValidated = this.validate();
 
     if (isValidated) {
-      console.log(this.state);
-
       const formEl = e.target;
       const xhr = new XMLHttpRequest();
       const formInfo = new FormData(formEl);
@@ -98,8 +88,6 @@ class ContactForm extends React.Component {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
           this.setState(defaultState);
-          console.log(this.state);
-
           this.setState({ sendStatus: "send" });
         } else {
           this.setState({ sendStatus: "error" });
@@ -124,7 +112,7 @@ class ContactForm extends React.Component {
             type="text"
             name="name"
             value={this.state.name}
-            onChange={this.checkInput.bind(this)}
+            onChange={this.setInputs.bind(this)}
           />
           <strong className="error__msg">{this.state.nameErr}</strong>
         </label>
@@ -134,7 +122,7 @@ class ContactForm extends React.Component {
             type="text"
             name="email"
             value={this.state.email}
-            onChange={this.checkInput.bind(this)}
+            onChange={this.setInputs.bind(this)}
           />
           <strong className="error__msg">{this.state.emailErr}</strong>
         </label>
@@ -146,7 +134,7 @@ class ContactForm extends React.Component {
             cols="30"
             rows="10"
             value={this.state.message}
-            onChange={this.checkInput.bind(this)}
+            onChange={this.setInputs.bind(this)}
           ></textarea>
           <strong className="error__msg">{this.state.messageErr}</strong>
         </label>
