@@ -7,6 +7,10 @@
     @include textWrapper(black);
     padding: 7em 5em;
 
+    @media (max-width: 500px) {
+      padding: 6em 1.5em 2em 1.5em;
+    }
+
     h2 {
       font-size: 25px;
       padding-bottom: 1em;

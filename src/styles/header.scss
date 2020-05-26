@@ -18,6 +18,7 @@ nav {
 
     img {
       @include imgWrapper(contain, 60px, 100%);
+      margin-right: auto;
     }
   }
 
