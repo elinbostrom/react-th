@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.jpg";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 // Components
 import Burger from "./burger";
@@ -26,9 +27,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <Nav className="menu">
-        <a href="index.html" className="logo">
+        <Link to="header" smooth={true} duration={1000} className="logo">
           <img src={logo} alt="trygga hiss logotype" />
-        </a>
+        </Link>
         <Burger />
       </Nav>
     );

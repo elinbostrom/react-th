@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -84,13 +85,19 @@ const Burger = () => {
       </StyledBurger>
       <Menu open={open} onClick={() => setOpen(!open)}>
         <li>
-          <a href="#aboutUs">Om oss</a>
+          <Link to="aboutUs" smooth={true} duration={1000}>
+            Om oss
+          </Link>
         </li>
         <li>
-          <a href="#services">Tjänster</a>
+          <Link to="services" smooth={true} duration={1000}>
+            Tjänster
+          </Link>
         </li>
         <li>
-          <a href="#contact">Kontakt</a>
+          <Link to="contact" smooth={true} duration={1000}>
+            Kontakt
+          </Link>
         </li>
       </Menu>
     </>

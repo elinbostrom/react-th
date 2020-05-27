@@ -4,7 +4,7 @@ import Navbar from "./nav/navbar";
 class Header extends React.Component {
   render() {
     return (
-      <header>
+      <header id="header">
         <Navbar />
         <section className="header__content">
           <h1>Välkommen till Trygga Hiss</h1>
