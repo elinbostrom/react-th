@@ -21,6 +21,7 @@ const Nav = styled.nav`
   padding: 1em 2em;
   width: 100vw;
   transition: top 0.3s;
+  z-index: 20;
 `;
 
 class Navbar extends React.Component {

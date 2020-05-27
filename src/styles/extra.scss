@@ -84,3 +84,49 @@
     opacity: 0;
   }
 }
+
+@keyframes showElavator {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes openLeftDoor {
+  0% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(-80%);
+  }
+
+  60% {
+    transform: translateX(-80%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes openRightDoor {
+  0% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(80%);
+  }
+
+  60% {
+    transform: translateX(80%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

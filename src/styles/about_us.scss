@@ -32,6 +32,7 @@
   &__photo {
     img {
       @include imgWrapper(cover, 500px, 100vw);
+      position: relative;
 
       @media (max-width: 600px) {
         @include imgWrapper(cover, 300px, 100vw);
