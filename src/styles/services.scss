@@ -6,7 +6,7 @@
   text-align: center;
   position: relative;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     padding: 6em 1.5em 4em 1.5em;
   }
 
@@ -29,7 +29,7 @@
     margin: auto;
     justify-content: center;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       grid-template: repeat(4, auto) / 1fr;
       margin: unset;
       justify-content: unset;
@@ -59,7 +59,7 @@
   .modern {
     grid-column: span 3;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       grid-column: unset;
     }
 

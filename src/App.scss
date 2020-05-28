@@ -13,7 +13,11 @@
 }
 
 body {
-  background: #b6bfb3de;
+  background: url(./images/headerpic.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
   font-family: "Poppins", sans-serif;
   min-width: 300px;

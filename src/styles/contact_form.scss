@@ -33,11 +33,19 @@
     grid-template: auto 1fr auto / 1fr 1fr;
     padding: 2em 4em 4em 4em;
     gap: 1em;
+    color: black;
 
     @media (max-width: 600px) {
       margin: 2em 0;
       grid-template: auto auto 1fr auto / 1fr;
       padding: 2em;
+    }
+
+    @media (max-width: 400px) {
+      margin: 2em 0;
+      grid-template: auto auto 1fr auto / 1fr;
+      padding: 1em;
+      gap: 0.5em;
     }
   }
 
@@ -87,14 +95,14 @@
 
   input {
     border-radius: 5px;
-    border: 0.5px solid rgb(211, 211, 211);
+    border: 0.5px solid rgb(153, 153, 153);
     padding: 0.5em;
     margin: 0.5em 0;
   }
 
   textarea {
     border-radius: 5px;
-    border: 0.5px solid rgb(211, 211, 211);
+    border: 0.5px solid rgb(153, 153, 153);
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     padding: 5px;
@@ -115,9 +123,15 @@
     grid-row: 3;
     font-size: 14px;
     padding-top: 0.5em;
+    color: black;
     animation: fadeOut 3000ms forwards;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
       grid-row: unset;
     }
   }
@@ -129,7 +143,12 @@
     font-size: 14px;
     padding-top: 0.5em;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
       grid-row: unset;
     }
   }

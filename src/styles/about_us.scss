@@ -1,10 +1,12 @@
 .aboutUs {
-  background: #b6bfb3de;
+  background: #b6bfb3d0;
   width: 100vw;
   margin-bottom: -10px;
 
   &__text {
     @include textWrapper(black);
+    max-width: 700px;
+    width: 100%;
     padding: 7em 5em;
 
     @media (max-width: 500px) {

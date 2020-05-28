@@ -10,7 +10,7 @@ const Nav = styled.nav`
   position: fixed;
   background: rgb(0, 0, 0);
   background: linear-gradient(
-    180deg,
+    360deg,
     rgba(0, 0, 0) 0%,
     rgba(37, 37, 37) 70%,
     rgba(37, 37, 37) 100%

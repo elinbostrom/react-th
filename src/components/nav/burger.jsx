@@ -83,19 +83,49 @@ const Burger = () => {
         <div></div>
         <div></div>
       </StyledBurger>
-      <Menu open={open} onClick={() => setOpen(!open)}>
+      <Menu
+        open={open}
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         <li>
-          <Link to="aboutUs" smooth={true} duration={1000}>
+          <Link
+            open={open}
+            onClick={() => {
+              setOpen(!open);
+            }}
+            to="aboutUs"
+            smooth={true}
+            duration={1000}
+          >
             Om oss
           </Link>
         </li>
         <li>
-          <Link to="services" smooth={true} duration={1000}>
+          <Link
+            open={open}
+            onClick={() => {
+              setOpen(!open);
+            }}
+            to="services"
+            smooth={true}
+            duration={1000}
+          >
             Tjänster
           </Link>
         </li>
         <li>
-          <Link to="contact" smooth={true} duration={1000}>
+          <Link
+            open={open}
+            onClick={() => {
+              setOpen(!open);
+              console.log(open);
+            }}
+            to="contact"
+            smooth={true}
+            duration={1000}
+          >
             Kontakt
           </Link>
         </li>

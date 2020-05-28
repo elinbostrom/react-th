@@ -17,23 +17,7 @@ class ContactForm extends React.Component {
   }
 
   setInputs(e) {
-    // Declear input types
-    let name = e.target.name === "name";
-    let email = e.target.name === "email";
-    let message = e.target.name === "message";
-
-    // setState input fields
-    if (name) {
-      this.setState({ name: e.target.value });
-    }
-
-    if (email) {
-      this.setState({ email: e.target.value });
-    }
-
-    if (message) {
-      this.setState({ message: e.target.value });
-    }
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   validate = () => {
