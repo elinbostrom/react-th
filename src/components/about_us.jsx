@@ -24,7 +24,7 @@ class AboutUs extends React.Component {
           </p>
 
           <p>
-            Genom att välja Trygga Hiss som en samarbetspartner från man på en
+            Genom att välja Trygga Hiss som en samarbetspartner får man på en
             och samma gång god kvalitet, god service, den bästa ekonomiska
             lösningen och en flexibilitet inför framtiden!
           </p>

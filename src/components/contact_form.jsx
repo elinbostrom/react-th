@@ -86,7 +86,7 @@ class ContactForm extends React.Component {
     const { sendStatus } = this.state;
     return (
       <form
-        action="https://formspree.io/mdoodqpy"
+        action="https://formspree.io/xrgyqeaq"
         method="POST"
         onSubmit={this.sendMessage.bind(this)}
       >

@@ -1,7 +1,7 @@
 {
   "name": "tryggahiss1.1",
   "version": "0.1.0",
-  "homepage": "http://elinbostrom.se/tryggahiss/",
+  "homepage": "http://tryggahiss.se",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "aos": "^2.3.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
