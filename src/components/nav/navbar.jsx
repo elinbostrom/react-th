@@ -16,7 +16,7 @@ const Nav = styled.nav`
     rgba(37, 37, 37) 100%
   );
   display: flex;
-  justify-conent: flex-end;
+  justify-content: flex-end;
   align-items: center;
   padding: 1em 2em;
   width: 100vw;

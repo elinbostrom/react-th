@@ -12,13 +12,18 @@ footer {
   width: 100vw;
   font-size: 12px;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: center;
 
   a {
     @include aDeco(bold, white);
     padding-left: 0.5em;
+  }
+
+  .gdpr {
+    color: #98cdb6;
   }
 
   @media (max-width: 1000px) {
@@ -28,10 +33,9 @@ footer {
   .footer__text {
     display: flex;
     justify-content: center;
-
-    @media (max-width: 750px) {
-      flex-direction: column;
-    }
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
   }
 
   .sigill {
@@ -39,7 +43,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.705);
     border-radius: 5px;
     width: fit-content;
-    margin: 1em auto;
+    margin: 1em;
 
     img {
       @include imgWrapper(contain, 100%, 150px);

@@ -1,5 +1,5 @@
 import React from "react";
-import gunnar from "../images/gunnar.jpg";
+import jesper from "../images/jesper.jpg";
 import johan from "../images/johan.jpg";
 import tommy from "../images/tommy.jpg";
 import leif from "../images/leffe.jpg";
@@ -17,12 +17,12 @@ class Contact extends React.Component {
             <div className="oandr__wrapper">
               <div className="oandr__wrapper__gunnar">
                 <div className="oandr__wrapper__gunnar__photo">
-                  <img src={gunnar} alt="Gunnar" />
+                  <img src={jesper} alt="Gunnar" />
                 </div>
                 <div className="oandr__wrapper__gunnar__text">
-                  <h3>Gunnar Hammar</h3>
-                  <p>070-356 05 25</p>
-                  <a href="mailto:gunnar@tryggahiss.se">gunnar@tryggahiss.se</a>
+                  <h3>Jesper Näslund</h3>
+                  <p>010-722 85 70</p>
+                  <a href="mailto:jesper@tryggahiss.se">jesper@tryggahiss.se</a>
                 </div>
               </div>
               <div className="oandr__wrapper__johan">
@@ -59,7 +59,7 @@ class Contact extends React.Component {
               <div className="aoandr__wrapper__leif__text">
                 <h3>Leif Boman</h3>
                 <p>070-356 53 61</p>
-                <a href="mailto:leif@tryggahiss.se">leif@tryggahiss.se</a>
+                <a href="mailto:leffe@tryggahiss.se">leffe@tryggahiss.se</a>
               </div>
             </div>
           </article>
