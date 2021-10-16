@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { Route, Switch, useLocation } from "react-router";
+import { Route, Switch } from "react-router";
 
 // Components
 import Header from "./components/header";
@@ -9,15 +9,14 @@ import AboutUs from "./components/about_us";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import Navbar from "./components/nav/navbar";
+import { Tools } from "./components/tools";
 
 function App() {
-  const location = useLocation();
-
   return (
     <div className="App">
       <Switch>
         <Route path="/verktyg">
-          {location.pathname === '/verktyg' ? window.location.href = "https://idealdesign.se/tryggahiss/checklistor.html" : null}
+          <Tools />
         </Route>
         <Route path="/kontakt">
           <Navbar />
