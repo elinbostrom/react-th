@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.jpg";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 // Components
 import Burger from "./burger";
@@ -24,17 +24,15 @@ const Nav = styled.nav`
   z-index: 20;
 `;
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <Nav className="menu">
-        <Link to="header" smooth={true} duration={1000} className="logo">
-          <img src={logo} alt="trygga hiss logotype" />
-        </Link>
-        <Burger />
-      </Nav>
-    );
-  }
-}
+export const Navbar = () => {
+  return (
+    <Nav className="menu">
+      <Link to="/" className="logo">
+        <img src={logo} alt="trygga hiss logotype" />
+      </Link>
+      <Burger />
+    </Nav>
+  );
+};
 
 export default Navbar;

@@ -9,7 +9,8 @@ header {
   display: grid;
   grid-template: auto 1fr / 1fr;
   width: 100vw;
-  height: 100vh;
+  max-height: 60vh;
+  height: 100%;
 
   @media (max-width: 900px) {
     background-size: cover;
@@ -54,7 +55,7 @@ nav {
 }
 
 .header__content {
-  height: calc(100vh - 100px);
+  height: calc(60vh - 100px);
   display: flex;
   align-items: center;
 

@@ -1,15 +1,13 @@
 import React from "react";
 import Navbar from "./nav/navbar";
-// import { Link } from "react-scroll";
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header id="header">
-        <Navbar />
-        <section className="header__content">
-          <h1>Välkommen till Trygga Hiss</h1>
-          {/* <div className="elevator">
+export const Header = () => {
+  return (
+    <header id="header">
+      <Navbar />
+      <section className="header__content">
+        <h1>Välkommen till Trygga Hiss</h1>
+        {/* <div className="elevator">
             <div className="elevator__strings"></div>
             <Link
               to="header"
@@ -31,10 +29,9 @@ class Header extends React.Component {
               ></Link>
             </Link>
           </div> */}
-        </section>
-      </header>
-    );
-  }
-}
+      </section>
+    </header>
+  );
+};
 
 export default Header;

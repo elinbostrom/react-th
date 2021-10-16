@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -73,8 +74,40 @@ const Menu = styled.menu`
   }
 `;
 
+const menuItemsHem = [
+  {
+    id: 1,
+    label: "Om oss",
+    path: "aboutUs",
+  },
+  {
+    id: 2,
+    label: "Tjänster",
+    path: "services",
+  },
+  {
+    id: 3,
+    label: "Kontakt",
+    path: "/kontakt",
+  },
+];
+
+const menuItemsKontakt = [
+  {
+    id: 1,
+    label: "Hem",
+    path: "/",
+  },
+  {
+    id: 2,
+    label: "Kontakt",
+    path: "/kontakt",
+  },
+];
+
 const Burger = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <>
@@ -89,46 +122,54 @@ const Burger = () => {
           setOpen(!open);
         }}
       >
-        <li>
-          <Link
-            open={open}
-            onClick={() => {
-              setOpen(!open);
-            }}
-            to="aboutUs"
-            smooth={true}
-            duration={1000}
-          >
-            Om oss
-          </Link>
-        </li>
-        <li>
-          <Link
-            open={open}
-            onClick={() => {
-              setOpen(!open);
-            }}
-            to="services"
-            smooth={true}
-            duration={1000}
-          >
-            Tjänster
-          </Link>
-        </li>
-        <li>
-          <Link
-            open={open}
-            onClick={() => {
-              setOpen(!open);
-              console.log(open);
-            }}
-            to="contact"
-            smooth={true}
-            duration={1000}
-          >
-            Kontakt
-          </Link>
-        </li>
+        {location.pathname === "/kontakt"
+          ? menuItemsKontakt.map(item => {
+              return (
+                <li key={item.id}>
+                  <Link
+                    open={open}
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                    to={item.path}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })
+          : menuItemsHem.map(item => {
+              if (item.path.includes("/")) {
+                return (
+                  <li key={item.id}>
+                    <Link
+                      open={open}
+                      onClick={() => {
+                        setOpen(!open);
+                      }}
+                      to={item.path}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+              return (
+                <li key={item.id}>
+                  <ScrollLink
+                    open={open}
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                    to={item.path}
+                    smooth={true}
+                    duration={1000}
+                  >
+                    {item.label}
+                  </ScrollLink>
+                </li>
+              );
+            })}
       </Menu>
     </>
   );
